@@ -14,7 +14,7 @@ locals {
 }
 
 module "resource_groups" {
-  source = "git::https://dev.azure.com/innersource/Merlion/_git/tf-module-az-resource-group?ref=main"
+  source = "git::https://github.com/BrettOJ/tf-az-module-resource-group?ref=main"
   resource_groups = {
     vmss = {
       name                   = var.resource_group_name
@@ -26,7 +26,7 @@ module "resource_groups" {
 }
 
 module "azurerm_public_ip_prefix" {
-  source                 = "git::https://dev.azure.com/innersource/Merlion/_git/tf-module-az-network-public-ip-prefix?ref=main"
+  source                 = "git::https://github.com/BrettOJ/tf-az-module-network-public-ip-prefix?ref=main"
   location               = var.location
   resource_group_name    = var.resource_group_name
   naming_convention_info = local.naming_convention_info
@@ -38,7 +38,7 @@ module "azurerm_public_ip_prefix" {
 }
 
 module "azurerm_public_ip" {
-  source                  = "../" #"git::https://dev.azure.com/innersource/Merlion/_git/tf-module-az-public-ip?ref=main"
+  source                  = "git::https://github.com/BrettOJ/tf-az-module-network-public-ip?ref=main"
   location                = var.location
   resource_group_name     = var.resource_group_name
   naming_convention_info  = local.naming_convention_info
