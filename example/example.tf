@@ -47,6 +47,12 @@ module "azurerm_public_ip" {
   sku                     = var.sku
   allocation_method       = var.allocation_method
   domain_name_label       = var.domain_name_label
+  ddos_protection_mode    = var.ddos_protection_mode
+  ddos_protection_plan_id = var.ddos_protection_plan_id
+  edge_zone               = var.edge_zone
+  ip_tags                 = var.ip_tags
+  ip_version              = var.ip_version
+  idle_timeout_in_minutes = var.idle_timeout_in_minutes
   zones                   = var.zones
   tags                    = local.tags
 }
